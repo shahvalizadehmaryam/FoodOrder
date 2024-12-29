@@ -1,11 +1,12 @@
-import Banner from "../modules/Banner"
+import Banner from "../modules/Banner";
+import styles from "./Home.module.css";
 
 function HomePage() {
   return (
-    <div>
-        <Banner />
+    <div className={styles.container}>
+      <Banner />
     </div>
-  )
+  );
 }
 
-export default HomePage
+export default HomePage;
