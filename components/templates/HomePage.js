@@ -1,6 +1,10 @@
+import Banner from "../modules/Banner"
+
 function HomePage() {
   return (
-    <div>HomePage</div>
+    <div>
+        <Banner />
+    </div>
   )
 }
 
