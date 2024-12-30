@@ -1,12 +1,13 @@
 import { useRouter } from "next/router";
+import DetailsPage from "../../components/templates/DetailsPage";
 
 function Details({ data }) {
   const router = useRouter();
-  if(router.isFallback){
-    return <h2>Loading page...</h2>
+  if (router.isFallback) {
+    return <h2>Loading page...</h2>;
   }
   console.log(data);
-  return <div>Details</div>;
+  return <DetailsPage {...data} />;
 }
 
 export default Details;
@@ -23,7 +24,9 @@ export async function getStaticPaths() {
   };
 }
 export async function getStaticProps(context) {
-  const { params: {id} } = context;
+  const {
+    params: { id },
+  } = context;
   console.log(id);
   const res = await fetch(`http://localhost:4000/data/${id}`);
   const data = await res.json();
